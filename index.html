@@ -490,6 +490,194 @@
             stroke-width: 2;
         }
 
+        /* Media Section */
+        .media-section {
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .media-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .media-card:visited {
+            color: inherit;
+        }
+
+        .media-card:hover {
+            border-color: var(--border-gold);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        .media-thumbnail {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .media-thumbnail-youtube {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+
+        .media-thumbnail-newsletter {
+            background: linear-gradient(135deg, #1a1d26 0%, #252a36 100%);
+        }
+
+        .media-thumbnail-icon {
+            font-size: 4rem;
+            opacity: 0.9;
+        }
+
+        .youtube-play {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 0, 0, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        .media-card:hover .youtube-play {
+            transform: scale(1.1);
+            background: rgba(255, 0, 0, 1);
+        }
+
+        .youtube-play svg {
+            width: 32px;
+            height: 32px;
+            fill: white;
+            margin-left: 4px;
+        }
+
+        .newsletter-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .newsletter-icon svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--gold-primary);
+            fill: none;
+            stroke-width: 1.5;
+        }
+
+        .newsletter-icon span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            color: var(--gold-primary);
+            letter-spacing: 0.05em;
+        }
+
+        .media-thumbnail-dashboard {
+            background: linear-gradient(135deg, #0d1117 0%, #161b22 50%, #1a2332 100%);
+        }
+
+        .dashboard-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .dashboard-icon svg {
+            width: 60px;
+            height: 60px;
+            stroke: var(--gold-primary);
+            fill: none;
+            stroke-width: 1.5;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.8; }
+            50% { opacity: 1; filter: drop-shadow(0 0 8px rgba(201, 162, 39, 0.5)); }
+        }
+
+        .dashboard-icon span {
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.75rem;
+            color: var(--gold-primary);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            background: rgba(201, 162, 39, 0.15);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+        }
+
+        .media-content {
+            padding: 1.75rem;
+        }
+
+        .media-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gold-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .media-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+
+        .media-desc {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+        }
+
+        .media-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .media-link:hover {
+            color: var(--gold-primary);
+        }
+
+        .media-link svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+        }
+
         /* Services Section */
         .services-grid {
             display: grid;
@@ -769,6 +957,11 @@
             .testimonials-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .media-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 700px;
+            }
             
             .about-content {
                 grid-template-columns: 1fr;
@@ -808,8 +1001,13 @@
 
             .services-grid,
             .testimonials-grid,
-            .predictions-grid {
+            .predictions-grid,
+            .media-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .media-grid {
+                max-width: 400px;
             }
 
             .hero-cta-group {
@@ -923,6 +1121,67 @@
                         <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="media-section" id="media">
+        <div class="section-container">
+            <div class="section-header">
+                <div class="section-label">Stay Connected</div>
+                <h2 class="section-title">Free Content & Analysis</h2>
+            </div>
+            <div class="media-grid">
+                <a href="https://youtube.com/texaswestcapital" target="_blank" class="media-card">
+                    <div class="media-thumbnail media-thumbnail-youtube">
+                        <div class="youtube-play">
+                            <svg viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                        </div>
+                    </div>
+                    <div class="media-content">
+                        <div class="media-label">Live Every Wednesday</div>
+                        <h3 class="media-title">Beards & Bitcoin</h3>
+                        <p class="media-desc">Join Christopher, Andrew, and Tillman live at 11 a.m. CDT every Wednesday for Bitcoin market analysis, industry news, ETF updates, and price action insights.</p>
+                        <span class="media-link">
+                            Watch on YouTube
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="https://themarketbreakdown.com" target="_blank" class="media-card">
+                    <div class="media-thumbnail media-thumbnail-newsletter">
+                        <div class="newsletter-icon">
+                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span>Substack</span>
+                        </div>
+                    </div>
+                    <div class="media-content">
+                        <div class="media-label">Free Daily Newsletter</div>
+                        <h3 class="media-title">The Market Breakdown</h3>
+                        <p class="media-desc">Free daily (M-F) cross-asset market intelligence for traders who think in systems, not headlines. Over 1,000 subscribers.</p>
+                        <span class="media-link">
+                            Subscribe Free
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
+                <a href="https://market-stress-meter.vercel.app/dashboard" target="_blank" class="media-card">
+                    <div class="media-thumbnail media-thumbnail-dashboard">
+                        <div class="dashboard-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="5"/></svg>
+                            <span>Live Data</span>
+                        </div>
+                    </div>
+                    <div class="media-content">
+                        <div class="media-label">Free Embeddable Widgets</div>
+                        <h3 class="media-title">Market Stress Dashboard</h3>
+                        <p class="media-desc">LCG's live market stress indicators. Embed these free widgets on your blog, website, or newsletter to track market conditions.</p>
+                        <span class="media-link">
+                            View Dashboard
+                            <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </span>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
