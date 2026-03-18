@@ -834,6 +834,34 @@
             color: var(--text-secondary);
         }
 
+        /* Team Grid */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .team-member {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .team-member .about-image {
+            width: 280px;
+            max-width: 100%;
+            margin-bottom: 2rem;
+        }
+
+        .team-member .about-text h3 {
+            font-size: 1.8rem;
+        }
+
+        .team-member .about-text p {
+            font-size: 0.95rem;
+        }
+
         /* Testimonials */
         .testimonials-grid {
             display: grid;
@@ -963,6 +991,11 @@
                 max-width: 700px;
             }
             
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 3rem;
@@ -1100,6 +1133,16 @@
                     <div class="prediction-year">2018</div>
                     <div class="prediction-title">December Crypto Bottom</div>
                     <div class="prediction-desc">Called the December 2018 crypto market low, marking the beginning of the next bull cycle.</div>
+                </div>
+                <div class="prediction-card">
+                    <div class="prediction-year">2019</div>
+                    <div class="prediction-title">Bitcoin $4K Bottom <span style="color: var(--gold-primary); font-size: 0.75rem;">— FiboSwanny</span></div>
+                    <div class="prediction-desc">While consensus fixated on $1,000, Brian's Fibonacci system projected a major low months in advance around $4,000—a level that marked a decisive pivot.</div>
+                </div>
+                <div class="prediction-card">
+                    <div class="prediction-year">2022</div>
+                    <div class="prediction-title">Bitcoin $16.8K Low <span style="color: var(--gold-primary); font-size: 0.75rem;">— FiboSwanny</span></div>
+                    <div class="prediction-desc">Amid widespread capitulation calls, Brian identified $16,800 as a high-probability structural low well before it formed. Price delivered with precision.</div>
                 </div>
             </div>
         </div>
@@ -1242,22 +1285,46 @@
 
     <section class="about" id="about">
         <div class="section-container">
-            <div class="about-content">
-                <div class="about-image">
-                    <div class="about-image-frame">
-                        <img src="chris-inks.jpg" alt="Christopher Inks" class="about-photo">
+            <div class="section-header">
+                <div class="section-label">Your Guides</div>
+                <h2 class="section-title">Meet the Team</h2>
+            </div>
+            <div class="team-grid">
+                <!-- Christopher Inks -->
+                <div class="team-member">
+                    <div class="about-image">
+                        <div class="about-image-frame">
+                            <img src="chris-inks.jpg" alt="Christopher Inks" class="about-photo">
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h3>Christopher Inks<br><span>CEO & Chief Strategist</span></h3>
+                        <p>With 30 years of trading experience across stocks, options, FOREX, and crypto, Christopher founded TexasWest Capital to share the knowledge that transformed him from novice to professional trader.</p>
+                        <p>His approach is grounded in social mood theory and technical analysis, enabling him to forecast major market shifts before they happen—often years in advance.</p>
+                        <div class="credentials">
+                            <span class="credential">BIS Finance, Economics & Philosophy</span>
+                            <span class="credential">MS Applied Psychology</span>
+                            <span class="credential">MS Homeland Security</span>
+                            <span class="credential">JD Corporate & Emerging Tech Law</span>
+                        </div>
                     </div>
                 </div>
-                <div class="about-text">
-                    <div class="section-label">Meet the Founder</div>
-                    <h3>Christopher Inks<br><span>CEO & Chief Strategist</span></h3>
-                    <p>With 30 years of trading experience across stocks, options, FOREX, and crypto, Christopher founded TexasWest Capital to share the knowledge that transformed him from novice to professional trader.</p>
-                    <p>His approach is grounded in social mood theory and technical analysis, enabling him to forecast major market shifts before they happen—often years in advance.</p>
-                    <div class="credentials">
-                        <span class="credential">BIS Finance, Economics & Philosophy</span>
-                        <span class="credential">MS Applied Psychology</span>
-                        <span class="credential">MS Homeland Security</span>
-                        <span class="credential">JD Corporate & Tax Law</span>
+                <!-- Brian Swan (FiboSwanny) -->
+                <div class="team-member">
+                    <div class="about-image">
+                        <div class="about-image-frame" style="background: linear-gradient(145deg, var(--bg-tertiary) 0%, var(--bg-primary) 100%); border: 1px solid var(--border-gold); border-radius: 50%;">
+                            <!-- Replace with brian-swan.jpg when available -->
+                            <div class="about-initials">BS</div>
+                        </div>
+                    </div>
+                    <div class="about-text">
+                        <h3>Brian Swan<br><span>FiboSwanny | Market Strategist</span></h3>
+                        <p>Brian Swan is a market strategist with over 25 years of experience specializing in Fibonacci analysis, cycle structure, and technical market behavior.</p>
+                        <p>His work focuses on price architecture—retracements, extensions, and ratio-based relationships—using Fibonacci frameworks to identify high-probability inflection points across different market environments. By combining disciplined technical analysis with macro awareness and risk management, he helps investors prioritize structure over narrative and act with clarity and conviction.</p>
+                        <div class="credentials">
+                            <span class="credential">BS Finance & Accounting</span>
+                            <span class="credential">CFTe Designation</span>
+                        </div>
                     </div>
                 </div>
             </div>
